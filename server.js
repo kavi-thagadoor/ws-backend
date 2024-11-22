@@ -16,11 +16,9 @@ const io = socketIo(server, {
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
-mongoose.connect('mongodb+srv://kavi:vwreKKd9BDBFVFxT@cluster0.qqbgvgo.mongodb.net/test', { useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://kavi:vwreKKd9BDBFVFxT@cluster0.qqbgvgo.mongodb.net/test')
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
-
 // User Schema and Model
 const userSchema = new mongoose.Schema({
   name: String,
