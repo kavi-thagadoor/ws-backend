@@ -15,7 +15,6 @@
     "env": {
       "MONGO_URI": "your_mongodb_connection_string_here",
       "PORT": "3000"
-    },
-    "regions": ["iad1", "sfo1"]
+    }
   }
   
