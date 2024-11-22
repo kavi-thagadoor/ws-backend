@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/server.js"
+      }
+    ],
+    "env": {
+      "MONGO_URI": "your_mongodb_connection_string_here",
+      "PORT": "3000"
+    },
+    "regions": ["iad1", "sfo1"],
+    "functions": {
+      "server.js": {
+        "memory": 512,
+        "maxDuration": 10
+      }
+    }
+  }
+  
