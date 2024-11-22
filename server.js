@@ -28,7 +28,6 @@ const User = mongoose.model('User', userSchema);
 // REST API to get all users
 app.get('/api/users', async (req, res) => {
   const users = await User.find();
-  console.log(users)
   res.json(users);
 });
 
