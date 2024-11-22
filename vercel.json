@@ -2,10 +2,7 @@
     "version": 2,
     "functions": {
       "api/server.js": {
-        "runtime": "nodejs16.x"
-      },
-      "api/socket.js": {
-        "runtime": "nodejs16.x"
+        "runtime": "nodejs18.x"
       }
     },
     "routes": [
@@ -15,7 +12,7 @@
       },
       {
         "src": "/api/socket",
-        "dest": "/api/socket.js"
+        "dest": "/api/server.js"
       }
     ]
   }
