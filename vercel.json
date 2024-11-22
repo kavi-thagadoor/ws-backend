@@ -1,19 +1,21 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "server.js",
-        "use": "@vercel/node"
+    "functions": {
+      "api/server.js": {
+        "runtime": "nodejs16.x"
+      },
+      "api/socket.js": {
+        "runtime": "nodejs16.x"
       }
-    ],
-    "env": {
-      "MONGO_URI": "your_mongodb_connection_string_here",
-      "PORT": "3000"
     },
     "routes": [
       {
-        "src": "/(.*)",
-        "dest": "/server.js"
+        "src": "/api/users",
+        "dest": "/api/server.js"
+      },
+      {
+        "src": "/api/socket",
+        "dest": "/api/socket.js"
       }
     ]
   }
