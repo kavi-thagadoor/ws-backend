@@ -46,11 +46,14 @@ app.get('/api/users', async (req, res) => {
 // WebSocket connection handling
 io.on('connection', (socket) => {
   console.log('Client connected:', socket.id);
-
+  getUsers()
   // Send existing users when a client connects
-  User.find().then((users) => {
-    socket.emit('updateUserList', users);
-  });
+  function getUsers(){
+    User.find().then((users) => {
+      socket.emit('updateUserList', users);
+    });
+  }
+  
 
   socket.on('addUser', async (userData, callback) => {
     // Validate callback function
@@ -81,9 +84,10 @@ io.on('connection', (socket) => {
           // Respond to the client with success and token
           callback({ success: true, message: token });
   
-          // Broadcast updated user list to all clients
-          const users = await User.find();
-          io.emit('updateUserList', users);
+          // // Broadcast updated user list to all clients
+          // const users = await User.find();
+          // io.emit('updateUserList', users);
+          getUsers()
         }
       );
     } catch (error) {
