@@ -20,7 +20,7 @@ app.use(express.json());
 
 // Connect to MongoDB
 mongoose
-  .connect('mongodb+srv://kavi:vwreKKd9BDBFVFxT@cluster0.qqbgvgo.mongodb.net/test', {
+  .connect('mongodb+srv://kavi:QH9YqbUehzJxhQDz@cluster0.qqbgvgo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/test3', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
